@@ -1,9 +1,15 @@
 <?php 
 
-require_once('./Class/Cart.php'); 
+require_once('./MyClass/Paypal/Payment.php');
+require_once('./MyClass/Stripe/Payment.php');
+require_once('./MyClass/User/User.php');
 
-$cart = new Cart(0,100); 
-$cart->setTotalPrice(50);
-$cart->discount(5);
+use MyClass\Paypal\Payment as PaypalPayment;
+use MyClass\Stripe\Payment; 
 
-var_dump($cart->getTotalPrice());
+$paymentPaypal  = new PaypalPayment();
+$paymentStripe = new Payment(); 
+
+var_dump($paymentStripe);
+
+?>
