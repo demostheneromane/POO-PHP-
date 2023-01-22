@@ -1,9 +1,13 @@
 <?php 
 
-use MyClass\Reservation; 
+use MyClass\OfficeReservation; 
 
 require '../vendor/autoload.php';
 
-echo Reservation::APPROVAL_PENDING;
+$officeReservation = new OfficeReservation('Réservation pour le mois de janvier'); 
+$officeReservation = new OfficeReservation('Réservation pour le mois de janvier'); 
+$officeReservation = new OfficeReservation('Réservation pour le mois de janvier'); 
+$officeReservation = new OfficeReservation('Réservation pour le mois de janvier'); 
+var_dump($officeReservation::getCount());
 
 ?>
