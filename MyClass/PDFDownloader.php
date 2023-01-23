@@ -2,7 +2,8 @@
 
 namespace MyClass; 
 
-interface  PDFDownloader 
+interface  
+ 
 {
    
    public function __construct();
