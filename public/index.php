@@ -1,13 +1,15 @@
 <?php 
 
-use MyClass\OfficeReservation; 
+use MyClass\CoffeeMachine; 
+use MyClass\PremiumCoffeeMachine; 
+
 
 require '../vendor/autoload.php';
 
-$officeReservation = new OfficeReservation('Réservation pour le mois de janvier'); 
-$officeReservation = new OfficeReservation('Réservation pour le mois de janvier'); 
-$officeReservation = new OfficeReservation('Réservation pour le mois de janvier'); 
-$officeReservation = new OfficeReservation('Réservation pour le mois de janvier'); 
-var_dump($officeReservation::getCount());
+//$coffeeMachine = new CoffeeMachine(30);
+$premiumCoffeeMachine = new PremiumCoffeeMachine(20);
+
+//$coffeeMachine->select('espresso');
+$premiumCoffeeMachine->select('vanilla');
 
 ?>
