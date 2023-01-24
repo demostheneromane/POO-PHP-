@@ -10,6 +10,11 @@ use MyClass\PremiumPDF;
 use MyClass\PDFDownloader;
 use MyClass\ParentClass; 
 use MyClass\ChildClass;
+use MyClass\Coffeemake; 
+use MyClass\IrishCoffee;
+use MyClass\NewEspresso; 
+use MyClass\MultiCoffeeMachine;
+
 
 require '../vendor/autoload.php';
 
@@ -33,7 +38,25 @@ require '../vendor/autoload.php';
 
 //var_dump($parentClass->getName(),$childClass->getName());
 
-var_dump(ParentClass::getName(),ChildClass::getName());
+//var_dump(ParentClass::getName(),ChildClass::getName());
+
+$newEspresso = new NewEspresso(); 
+$irishCoffee= new IrishCoffee();
+$multicoffee = new MultiCoffeeMachine();
+
+/*var_dump(
+    $newEspresso->makeEspresso(), 
+    $irishCoffee->makeIrishCoffee(),
+    $newEspresso->makeCoffee(), 
+    $irishCoffee->makeCoffee()
+
+); */ 
+
+var_dump(
+     $multicoffee->makeEspresso(), 
+     $multicoffee->makeIrishCoffee(), 
+     $multicoffee->makeCoffee()
+);
 
 
 ?>
