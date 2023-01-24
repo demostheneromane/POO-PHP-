@@ -7,7 +7,8 @@ class Router
 {
    public $routes = array(); 
 
-   public function register(string $path, callable $action):void 
+
+   public function register(string $path, array $action):void 
    {
       $this->routes[$path] = $action;
    }
@@ -16,9 +17,13 @@ class Router
       $path = explode('?',$uri)[0]; 
       $action = $this->routes[$path] ?? null; 
 
-      if(!is_callable($action)){
+      /*if(!is_callable($action)){
           throw new RouteNotFoundExceptions();
+      }*/ 
+
+      if(is_array($action)){
+        return $action();
       }
-      return $action();
+      
    }
 }

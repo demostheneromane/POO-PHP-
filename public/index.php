@@ -15,8 +15,7 @@ use MyClass\IrishCoffee;
 use MyClass\NewEspresso; 
 use MyClass\MultiCoffeeMachine;
 use Router\Router; 
-
-
+use Controllers\HomeController;
 
 require '../vendor/autoload.php';
 
@@ -61,14 +60,10 @@ $multicoffee = new MultiCoffeeMachine();*/
 );*/ 
 
 $route = new Router(); 
+$HomeController = new HomeController();
+$route->register('/POO-PHP-/public/index.php',[$HomeController,'home']);
 
-$route->register('/POO-PHP-/public/index.php',function(){
-     return 'HomePage';
-});
-
-$route->register('/contact',function(){
-    return 'Contact Page';
-});
+//$route->register('/contact',);
 
 echo $route->resolve($_SERVER['REQUEST_URI']); 
 
