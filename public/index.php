@@ -14,6 +14,8 @@ use MyClass\Coffeemake;
 use MyClass\IrishCoffee;
 use MyClass\NewEspresso; 
 use MyClass\MultiCoffeeMachine;
+use Router\Router; 
+
 
 
 require '../vendor/autoload.php';
@@ -40,9 +42,9 @@ require '../vendor/autoload.php';
 
 //var_dump(ParentClass::getName(),ChildClass::getName());
 
-$newEspresso = new NewEspresso(); 
+/*$newEspresso = new NewEspresso(); 
 $irishCoffee= new IrishCoffee();
-$multicoffee = new MultiCoffeeMachine();
+$multicoffee = new MultiCoffeeMachine();*/ 
 
 /*var_dump(
     $newEspresso->makeEspresso(), 
@@ -52,11 +54,23 @@ $multicoffee = new MultiCoffeeMachine();
 
 ); */ 
 
-var_dump(
+/*var_dump(
      $multicoffee->makeEspresso(), 
      $multicoffee->makeIrishCoffee(), 
      $multicoffee->makeCoffee()
-);
+);*/ 
+
+$route = new Router(); 
+
+$route->register('/POO-PHP-/public/index.php',function(){
+     return 'HomePage';
+});
+
+$route->register('/contact',function(){
+    return 'Contact Page';
+});
+
+echo $route->resolve($_SERVER['REQUEST_URI']); 
 
 
 ?>
