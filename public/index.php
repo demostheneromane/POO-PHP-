@@ -58,7 +58,7 @@ $multicoffee = new MultiCoffeeMachine();*/
      $multicoffee->makeIrishCoffee(), 
      $multicoffee->makeCoffee()
 );*/ 
-
+define('BASE_VIEW_PATH',dirname(__DIR__). DIRECTORY_SEPARATOR.'Views'.DIRECTORY_SEPARATOR);
 $route = new Router(); 
 $HomeController = new HomeController();
 $route->register('/POO-PHP-/public/index.php',[$HomeController,'home']);
